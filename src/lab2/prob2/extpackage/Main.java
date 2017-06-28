@@ -1,8 +1,8 @@
 package prob2.extpackage;
 import java.time.LocalDate;
 
-import prob2A.Student;
-import prob2B.Order;
+import lab2.prob2A.Student;
+import lab2.prob2B.Order;
 
 public class Main {
 	public static void main(String[] args) {
