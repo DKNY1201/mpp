@@ -1,14 +1,18 @@
 package lab2.prob2B;
 
-/**
- * Created by Bi on 6/28/17.
- */
 public class OrderLine {
-    Item item;
-    Order order;
-
-    OrderLine(Item item, Order order) {
-        this.item = item;
-        this.order = order;
-    }
+	private String item;
+	private double cost;
+	private int quantity;
+	
+	public OrderLine(String item, double cost, int quantity){
+		this.item = item;
+		this.cost = cost;
+		this.quantity = quantity;
+	}
+	
+	@Override
+	public String toString(){
+		return "[" + item + ", $" + cost + ", " + quantity+"]";
+	}
 }
