@@ -1,4 +1,4 @@
-package prob2tiep;
+package prob2;
 
 public class Apartment{
 	private String apartmentNo;
