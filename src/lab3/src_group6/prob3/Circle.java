@@ -1,4 +1,4 @@
-package prob3;
+package lab3.src_group6.prob3;
 
 /**
  * Created by Bi on 6/28/17.

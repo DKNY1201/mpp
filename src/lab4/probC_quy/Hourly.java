@@ -7,8 +7,14 @@ public class Hourly extends Employee {
     double hourlyWage;
     double hoursPerWeek;
 
+    Hourly(String empId, double hourlyWage, double hoursPerWeek) {
+        super(empId);
+        this.hourlyWage = hourlyWage;
+        this.hoursPerWeek = hoursPerWeek;
+    }
+
     @Override
-    public double calcGrossPay() {
-        return 0;
+    public double calcGrossPay(int month, int year) {
+        return hourlyWage * hoursPerWeek;
     }
 }
