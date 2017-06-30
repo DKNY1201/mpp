@@ -9,10 +9,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		List<Employee> employees = getAllEmployeeFromDB();
-		printAllPaycheckOfThisMonth(employees);
+		printAllPaycheck(employees);
 	}
 
-	public static void printAllPaycheckOfThisMonth(List<Employee> employees) {
+	public static void printAllPaycheck(List<Employee> employees) {
 		for (Employee employee : employees) {
 			employee.print();
 		}
