@@ -1,18 +1,20 @@
-package probc;
+package probc.launch;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main {
+import probc.*;
+
+public class PaycheckPrinter {
 
 	public static void main(String[] args) {
-		List<Employee> employees = getAllEmployeeFromDB();
-		printAllPaycheck(employees);
+		printAllPaycheck();
 	}
 
-	public static void printAllPaycheck(List<Employee> employees) {
+	public static void printAllPaycheck() {
+		List<Employee> employees = getAllEmployeeFromDB();
 		for (Employee employee : employees) {
 			employee.print(6,2017);
 		}

@@ -9,7 +9,7 @@ public class Salaried extends Employee{
 	}
 
 	@Override
-	double calcGrossPay() {
+	double calcGrossPay(int month, int year) {
 		return salary;
 	}
 }
