@@ -19,38 +19,23 @@ public class Commissioned extends Employee {
 	public void addOrder(String orderNo, LocalDate orderDate, double orderAmount, Commissioned commissioned) {
 		orders.add(new Order(orderNo, orderDate, orderAmount, commissioned));
 	}
-	
+
 	@Override
-	public Paycheck calcCompensation(LocalDate month) {
+	double calcGrossPay(int month, int year) {
 		double commissionAmount = 0;
-		int monthValue = month.getMonthValue();
-		int yearValue = month.getYear();
 		for (Order order : orders) {
 			int orderMonth = order.getOrderDate().getMonthValue();
 			int orderYear = order.getOrderDate().getYear();
-			if (monthValue > 1){
-				if (orderYear == yearValue && orderMonth == monthValue - 1)
+			if (month > 1){
+				if (orderYear == year && orderMonth == month - 1)
 					commissionAmount += order.getOrderAmount() * commission;
 			}else{
-				if (orderYear == yearValue - 1 && orderMonth == 12)
+				if (orderYear == year - 1 && orderMonth == 12)
 					commissionAmount += order.getOrderAmount() * commission;
 			}
 		}
 		
-		double grossPay = calcGrossPay() + commissionAmount;
-		double fica = grossPay * 0.23;
-		double state = grossPay * 0.05;
-		double local = grossPay * 0.01;
-		double medicare = grossPay * 0.03;
-		double socialSecurity = grossPay * 0.075;
-		Paycheck paycheck = new Paycheck(grossPay, fica, state, local, medicare, socialSecurity);
-		
-		return paycheck;
-	}
-
-	@Override
-	double calcGrossPay() {
-		return baseSalary;
+		return baseSalary+commissionAmount;
 	}
 
 }

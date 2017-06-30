@@ -14,7 +14,7 @@ public class Main {
 
 	public static void printAllPaycheck(List<Employee> employees) {
 		for (Employee employee : employees) {
-			employee.print();
+			employee.print(6,2017);
 		}
 	}
 
