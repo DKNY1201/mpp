@@ -1,6 +1,6 @@
 package probc;
 
-abstract class Employee {
+public abstract class Employee {
 	public String empId;
 	
 	public Paycheck calcCompensation(int month, int year){
