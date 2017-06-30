@@ -13,11 +13,11 @@ public class Main {
 		Salaried[] salarieds = new Salaried[] { new Salaried("003", 8000), 
 												new Salaried("004", 10000) };
 		Commissioned com1 = new Commissioned("005", 0.03, 2000);
-		com1.addOrder("order001", LocalDate.of(2017, 6, 15), 100000, com1);
-		com1.addOrder("order002", LocalDate.of(2017, 6, 30), 200000, com1);
+		com1.addOrder("order001", LocalDate.of(2017, 5, 15), 100000, com1);
+		com1.addOrder("order002", LocalDate.of(2017, 5, 30), 200000, com1);
 		Commissioned com2 = new Commissioned("006", 0.02, 3000);
 		com2.addOrder("order003", LocalDate.of(2017, 6, 15), 300000, com2);
-		com2.addOrder("order004", LocalDate.of(2017, 5, 15), 400000, com2);
+		com2.addOrder("order004", LocalDate.of(2017, 5, 15), 500000, com2);
 		Commissioned com3 = new Commissioned("007", 0.01, 4000);
 		Commissioned[] commissioneds = new Commissioned[] { com1, com2, com3 };
 		
