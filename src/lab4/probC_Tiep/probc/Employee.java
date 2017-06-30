@@ -17,7 +17,7 @@ abstract class Employee {
 	}
 	
 	public void print(){
-		System.out.println("Compensation of Employee has Id = " + empId + ":");
+		System.out.println("Compensation of Employee has Id = " + empId + " in this month:");
 		calcCompensation(LocalDate.now()).print();
 	}
 	
