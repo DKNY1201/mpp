@@ -19,8 +19,9 @@ abstract class Employee {
 	public void print(){
 		System.out.println("Compensation of Employee has Id = " + empId + " in this month:");
 		
-		//I think requirement of prob C is get compensation of an Employee in current month
-		//If I'm wrong, the solution is add more parameter to method calcGrossPay to get compensation of an Employee in a specific month.
+		//I thought requirement of problem C is get compensation of an Employee in current month
+		//If I'm wrong, the solution is add more parameter to method calcGrossPay and print to get compensation of an Employee, then print paycheck in a specific month.
+		//Please check our other solution to get and print paycheck in a specific month
 		calcCompensation(LocalDate.now()).print();
 	}
 	
