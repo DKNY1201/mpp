@@ -5,10 +5,14 @@ package lab4.probC_quy;
  */
 public class Salaried extends Employee {
     double salary;
-
+    
     Salaried(String empId, double salary) {
         super(empId);
         this.salary = salary;
+    }
+    
+    public double getSalary() {
+    	return this.salary;
     }
 
     @Override
