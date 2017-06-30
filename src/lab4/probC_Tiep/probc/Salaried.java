@@ -7,9 +7,13 @@ public class Salaried extends Employee{
 		this.empId = empId;
 		this.salary = salary;
 	}
+	
+	public double getSalary() {
+		return salary;
+	}
 
 	@Override
 	double calcGrossPay(int month, int year) {
-		return salary;
+		return getSalary();
 	}
 }

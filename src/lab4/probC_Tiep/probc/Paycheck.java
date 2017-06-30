@@ -31,7 +31,7 @@ public class Paycheck {
 	}
 
 	public double getNetPay() {
-		return grossPay - fica - state - local - medicare - socialSecurity;
+		return getGrossPay() - getFica() - getState() - getLocal() - getMedicare() - getSocialSecurity();
 	}
 
 	public double getGrossPay() {

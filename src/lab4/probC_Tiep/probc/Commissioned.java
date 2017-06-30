@@ -15,13 +15,25 @@ public class Commissioned extends Employee {
 		this.baseSalary = baseSalary;
 		orders = new ArrayList<Order>();
 	}
+	
+	public double getBaseSalary(){
+		return baseSalary;
+	}
 
+	public double getCommission(){
+		return commission;
+	}
+	
 	public void addOrder(String orderNo, LocalDate orderDate, double orderAmount, Commissioned commissioned) {
 		orders.add(new Order(orderNo, orderDate, orderAmount, commissioned));
 	}
 
 	@Override
 	double calcGrossPay(int month, int year) {
+		return getBaseSalary() + calcCommissionAmount(month,year,getCommission());
+	}
+
+	public double calcCommissionAmount(int month, int year, double commission){
 		double commissionAmount = 0;
 		for (Order order : orders) {
 			int orderMonth = order.getOrderDate().getMonthValue();
@@ -34,8 +46,6 @@ public class Commissioned extends Employee {
 					commissionAmount += order.getOrderAmount() * commission;
 			}
 		}
-		
-		return baseSalary+commissionAmount;
+		return commissionAmount;
 	}
-
 }
