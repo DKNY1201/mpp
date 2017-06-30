@@ -10,11 +10,11 @@ import probc.*;
 public class PaycheckPrinter {
 
 	public static void main(String[] args) {
-		List<Employee> employees = getAllEmployeeFromDB();
-		printAllPaycheck(employees);
+		printAllPaycheck();
 	}
 
-	public static void printAllPaycheck(List<Employee> employees) {
+	public static void printAllPaycheck() {
+		List<Employee> employees = getAllEmployeeFromDB();
 		for (Employee employee : employees) {
 			employee.print(6,2017);
 		}
