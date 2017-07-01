@@ -5,7 +5,7 @@ import java.awt.Component;
 import prob1.launch.RuleSet;
 import prob1.windows.ProfileWindow;
 
-public class CustomerProfileRuleSet implements RuleSet{
+final public class CustomerProfileRuleSet implements RuleSet{
 	CustomerProfileRuleSet(){};
 	
 	@Override
