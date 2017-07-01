@@ -9,11 +9,11 @@ public class RedheadDuck extends Duck{
 		quack = new Quack();
 	}
 	@Override
-	void fly() {
+	public void fly() {
 		fw.fly();
 	}
 	@Override
-	void quack() {
+	public void quack() {
 		quack.quack();
 	}
 
