@@ -9,11 +9,11 @@ public class RubberDuck extends Duck{
 		squeak = new Squeak();
 	}
 	@Override
-	void fly() {
+	public void fly() {
 		cf.fly();
 	}
 	@Override
-	void quack() {
+	public void quack() {
 		squeak.quack();
 	}
 

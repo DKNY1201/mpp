@@ -8,22 +8,23 @@ public class DecoyDuck extends Duck{
 		cf = new CannotFly();
 		mute = new MuteQuack();
 	}
+	
 	@Override
-	void fly() {
+	public void fly() {
 		cf.fly();
 	}
 	@Override
-	void quack() {
+	public void quack() {
 		mute.quack();
 	}
 
 	@Override
-	void swim() {
+	public void swim() {
 		System.out.println("swimming");
 	}
 
 	@Override
-	void display() {
+	public void display() {
 		System.out.println("display");
 	}
 }
