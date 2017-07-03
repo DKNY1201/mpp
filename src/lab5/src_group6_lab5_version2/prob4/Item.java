@@ -1,7 +1,7 @@
 package prob4;
 
-final public class Item {
-	private String name;
+public class Item {
+	String name;
 	Item(String name) {
 		this.name = name;
 	}

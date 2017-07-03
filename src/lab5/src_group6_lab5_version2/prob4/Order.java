@@ -4,30 +4,28 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-final public class Order {
+
+public class Order {
 	private LocalDate orderDate;
 	private List<Item> items;
-
-	// use a factory method
-	Order(LocalDate orderDate) {
+	
+	//use a factory method
+	private Order(LocalDate orderDate) {
 		this.orderDate = orderDate;
-		items = new ArrayList<Item>();
+		items = new ArrayList<Item>();	
 	}
-
 	public static Order newOrder(Customer cust, LocalDate date) {
-		if (cust == null)
-			throw new NullPointerException("Null customer");
+		if(cust == null) throw new NullPointerException("Null customer");
 		Order ord = new Order(date);
 		cust.addOrder(ord);
 		return ord;
 	}
-
-	public void addItem(String name) {
+	public void addItem(String name){
 		items.add(new Item(name));
 	}
-
 	@Override
 	public String toString() {
-		return orderDate + ": " + items.toString();
+		return orderDate + ": " + 
+	              items.toString();
 	}
 }
