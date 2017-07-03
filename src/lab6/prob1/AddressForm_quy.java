@@ -110,11 +110,11 @@ public class AddressForm_quy extends Application{
 
                 StringBuilder sb = new StringBuilder();
                 String newLine = System.lineSeparator();
-                sb.append(nameTextField.getCharacters().toString()).append(newLine)
-                        .append(streetTextField.getCharacters().toString()).append(newLine)
-                        .append(cityTextField.getCharacters().toString()).append(", ")
-                        .append(stateTextField.getCharacters().toString()).append(" ")
-                        .append(zipTextField.getCharacters().toString());
+                sb.append(nameTextField.getText()).append(newLine)
+                        .append(streetTextField.getText()).append(newLine)
+                        .append(cityTextField.getText()).append(", ")
+                        .append(stateTextField.getText()).append(" ")
+                        .append(zipTextField.getText());
                 System.out.println(sb.toString());
             }
         );
