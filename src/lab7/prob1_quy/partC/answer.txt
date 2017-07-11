@@ -1,0 +1,2 @@
+Because Employee is used as a key and The Employee class doesn’t override hashCode() method so it is wrong when
+adding Employee object to the HashMap, each Employee object has different hash value.
