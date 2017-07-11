@@ -1,9 +1,7 @@
 package prob2;
 
 public interface Polygon extends ClosedCurve{
-	default double[] getSides(){
-		return null;
-	}
+	public double[] getSides();
 	
 	@Override
 	default double computePerimeter(){
