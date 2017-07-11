@@ -11,6 +11,9 @@ public class ForEachExample {
 				"Away", "On Vacation", "Everywhere you want to be");
 		
 		//print each element of the list in upper case format
+		
+		//list.forEach(param -> System.out.println(param.toUpperCase()));
+		
 		list.forEach(consumer);
 	}
 	
