@@ -1,6 +1,6 @@
 package prob2;
 
-public class EquilateralTriangle implements ClosedCurve {
+public class EquilateralTriangle implements Polygon {
 	private double side;
 
 	public EquilateralTriangle(double side) {

@@ -1,9 +1,5 @@
 package prob2;
 
-public interface ClosedCurve extends Polygon{
-@Override
-default double computePerimeter() {
-	// TODO Auto-generated method stub
-	return Polygon.super.computePerimeter();
-}
+public interface ClosedCurve {
+	abstract double computePerimeter();
 }

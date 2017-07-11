@@ -1,6 +1,6 @@
 package prob2;
 
-public class Rectangle implements ClosedCurve {
+public class Rectangle implements Polygon {
 	private double length, width;
 
 	public Rectangle(double length, double width) {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataMiner {
-	List<Polygon> objects = new ArrayList<>();
+	List<ClosedCurve> objects = new ArrayList<>();
 	public static void main(String[] args) {
 		DataMiner dm = new DataMiner();
 		dm.objects.add(new Rectangle(5,7));
