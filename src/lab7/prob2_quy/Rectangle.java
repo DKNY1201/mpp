@@ -14,7 +14,7 @@ public class Rectangle implements ClosedCurve, Polygon {
 
 	@Override
 	public double computePerimeter() {
-		return 2 * length + 2 * width;
+		return length + length + width + width;
 	}
 	
 	
