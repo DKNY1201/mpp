@@ -1,0 +1,8 @@
+Because this block of code
+{
+	tracker.get(e).setVisited(true);
+}
+When we found the object Employee in the HashMap then we set the visited attribute of this object to true.
+So this code tracker.containsKey(e) will no longer return true with the object has same name, salary but the visited
+is false
+

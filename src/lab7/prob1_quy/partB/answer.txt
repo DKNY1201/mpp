@@ -1,0 +1,6 @@
+The function public boolean equals(Employee e) is not an Overridding of equals(Object o) of Object class.
+When we use contain() method in class List, it loop though the elements in List and compare using equals(Object o)
+method from Object class (because JVM doesn’t find any overridding version) and this equals() method check 2 things:
+- obj1 == obj2
+- references of these two reference variable point to the same object
+so the result is false.
