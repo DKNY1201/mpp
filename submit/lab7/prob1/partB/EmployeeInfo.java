@@ -1,4 +1,4 @@
-package lab7.prob1_quy.partB;
+package lab7.prob1.partB;
 
 import java.util.ArrayList;
 import java.util.List;

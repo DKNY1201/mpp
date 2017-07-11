@@ -1,8 +1,12 @@
-Because this block of code
-{
-	tracker.get(e).setVisited(true);
-}
-When we found the object Employee in the HashMap then we set the visited attribute of this object to true.
-So this code tracker.containsKey(e) will no longer return true with the object has same name, salary but the visited
-is false
+This solution is incorrect because in removeDuplicates method, when find out employee duplicate, 
+tracker HashMap will be set visited in current employee = true. So the sequence of incorrect results will be: 
 
+- This employee value in tracker HashMap will change visited value from false to true
+- This employee key in tracker will change visited value from false to true also.
+- Now in tracker HashMap will has Employee key which has visited = true
+- When traverse to next Employee which not visited but have same name and salary, it will be put to tracker and 
+noDupsList because its visited = false, then the equals method in containsKey method return false. In this scenario, 
+if an employee appears x times in Input Employee list, noDupsList will contain (x+1)/2 duplicates employee.
+- The listsAreEqual method does not work correctly as expected also, even in case size of answer equals to size of dupsRemoved. 
+Because answer list has at least 1 employee has visited = true, but dupsRemoved list has no employee has visited = true. 
+So that equals method when execute contains method will return false. So, the final result will be false.

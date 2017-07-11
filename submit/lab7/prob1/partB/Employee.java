@@ -1,4 +1,4 @@
-package lab7.prob1_quy.partB;
+package lab7.prob1.partB;
 
 public class Employee {
 	private String name;

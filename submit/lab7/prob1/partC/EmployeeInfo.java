@@ -1,4 +1,4 @@
-package lab7.prob1_quy.partC;
+package lab7.prob1.partC;
 
 import java.util.ArrayList;
 import java.util.HashMap;
