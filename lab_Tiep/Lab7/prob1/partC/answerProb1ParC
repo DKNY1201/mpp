@@ -1,0 +1,3 @@
+This solution is incorrect because Employee class does not override hashCode method. 
+So that containsKey method execution in removeDuplicates not work because containsKey use hash method
+to find the correct key in HashMap. The result when execute removeDuplicates will not removed duplicates.

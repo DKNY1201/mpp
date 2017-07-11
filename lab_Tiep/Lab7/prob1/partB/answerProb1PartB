@@ -1,0 +1,4 @@
+This solution is incorrect because Employee class does not override equals method. 
+So that equals method execution in inList method does not work correctly, and result when execute 
+removeDuplicates will not removed duplicates. The method listsAreEqual method does not work correctly also, 
+because it use contains method which use equals method.
