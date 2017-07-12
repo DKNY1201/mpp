@@ -1,0 +1,74 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red106\green62\blue62;\red127\green0\blue85;}
+{\*\expandedcolortbl;;\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c49804\c0\c33333;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 a. Name two differences between imperative and functional programming:\
+- Functional programming is when you write your code in such a way that it describes what you want to do, and imperative programming is when write your code in such a way that it describes how to reach a certain goal.\
+- Functions do not cause a change of state; in an OO language, this means that functions do not change the state of their enclosing object (by modifying instance variables). In general, functions do not have side effects; they compute what they are asked to compute and return a value, without modifying their environment (modifying the environment is a side effect). It\'92s not same with imperative programming.\
+\
+b. Explain the meaning of declarative programming.\
+- Declarative programming is when you write your code in such a way that it describes what you want to do. It makes code more self-documenting, the sequence of function calls mirrors precisely the requirements.\
+\
+- Example: list.stream()\
+                    .map(String::toUpperCase)\
+                    .forEach(System.out::println);\
+\
+c. Explain the difference between functional interface, functor, and closure\
+- A interface is called a functional interface when it has just one (abstract) method\
+- An implementation of a functional interface is called a functor\
+- A closure is a functor embedded inside another class, that is capable of remembering the state of its enclosing object\
+\
+Example using Java 7 syntax:\
+\
+- Functional interface & functor\
+public class EmployeeNameComparator implements Comparator<Employee> \{ \
+	@Override \
+	public int compare(Employee e1, Employee e2) \{ \
+		return e1.name.compareTo(e2.name);\
+	\} \
+\}\
+\
+- Closure:\
+public void sort(List<Employee> emps) \{\
+	class EmployeeNameComparator implements Comparator<Employee> \{ \
+		@Override public int compare(Employee e1, Employee e2) \{ \
+			return e1.name.compareTo(e2.name); \
+		\} \
+	\}\
+	
+\f1\fs22 Collections.sort(\cf2 emps\cf0 , \cf3 new\cf0  
+\f0\fs24 EmployeeNameComparator
+\f1\fs22 ());
+\f0\fs24 \
+\}\
+\
+d. Benefit of functional programming\
+- Programs are more compact, easier to write, and easier to read/understand\
+- Programs are thread-safe\
+- Easier to demonstrate correctness of functional programs\
+- Easier to test; less likely that a test of a subroutine will fail tomorrow if it passed today since there - are no side effects\
+\
+e. Express the functions using Church\'92s lambda notation:\
+i. \uc0\u955 x.x+xx\
+\
+ii. \uc0\u955 xy.y-x+x^y\
+\
+iii. \uc0\u955 xyz.z-x-y\
+\
+f. For each lambda expression below, name the parameters and the free variables.\
+i. No parameter. Free variables: s, t\
+ii. Parameters: u, v. Free variables: a, b, x, d\
+iii. Parameters: s, t. Free variables: ignoreCase\
+\
+h. An example of a method reference is System.out::println\
+i. (String s) -> System.out.println(s);\
+ii. Type of method reference is Consumer<String> because this method represents an operation that accepts a single input argument and returns no result. More detail, this method accept a String input to print to console.\
+\
+j. An example of a method reference is: Math::random\
+i. 
+\f1\fs22 () -> Math.random()
+\f0\fs24 \
+}
