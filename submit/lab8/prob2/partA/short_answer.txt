@@ -1,0 +1,4 @@
+An example of two Employee have the same name but not consider to equal
+
+Employee joe = new Employee("Joe", 100000);
+Employee joe2 = new Employee("Joe", 200000);
