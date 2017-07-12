@@ -27,6 +27,8 @@ public class EmployeeInfo {
 
 	public static void main(String[] args) {
 		List<Employee> emps = new ArrayList<>();
+		
+		// example of two Employee have the same name but not consider to equal
 		emps.add(new Employee("Joe", 100000));
 		emps.add(new Employee("Joe", 50000));
 		emps.add(new Employee("Andy", 60000));
