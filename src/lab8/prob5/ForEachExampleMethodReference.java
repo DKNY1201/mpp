@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 
 public class ForEachExampleMethodReference {
-	
+
 	public static void main(String[] args) {
 		List<String> list = Arrays.asList("Hello there", "Goodbye", "Back soon", 
 				"Away", "On Vacation", "Everywhere you want to be");

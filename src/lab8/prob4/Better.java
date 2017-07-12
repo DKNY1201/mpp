@@ -1,7 +1,5 @@
 package lab8.prob4;
 
-import lesson8.lecture.filter.Folks;
-
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;

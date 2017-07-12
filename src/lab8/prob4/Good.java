@@ -1,6 +1,5 @@
 package lab8.prob4;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
