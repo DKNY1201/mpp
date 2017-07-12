@@ -1,0 +1,123 @@
+a. Name two differences between imperative and functional programming
+- Imperative need free variables. Functional doesn't, it has referential transparency
+- Imperative change the state of their enclosing object. Functional not.
+- Imperative doesn't use function as parameter. Functional does.
+- Functional make sure every time we call to the method, we have the same result
+
+b. Explain the meaning of declarative programming. Give an example.
+The declarative style of functional programming makes it possible to write methods (and programs)
+just by declaring what is needed, without specifying the details of how to achieve the goal.
+
+Example: The Comparator interface is a declarative wrapper for the function compare.
+         interface Comparator<T> {
+            int compare(T o1, T o2);
+         }
+
+c. Explain the difference between functional interface, functor, and closure, and give examples of
+each using Java 7 syntax
+- Functional Interface: Is an Interface has only one abstract method
+Example:
+interface Comparator<T> {
+    int compare(T o1, T o2);
+}
+
+- Functor: An implementation of a functional interface is called a functor.
+Example:
+  public class EmployeeNameComparator implements Comparator<Employee> {
+    @Override
+    public int compare(Employee e1, Employee e2) {
+        return e1.name.compareTo(e2.name);
+    }
+  }
+
+- Closure: A closure is a functor embedded inside another class.
+Example:
+    static enum SortMethod {BYNAME, BYSALARY};
+	private boolean ignoreCase = true;
+	public void setIgnoreCase(boolean b) {
+		ignoreCase = b;
+	}
+    public void sort(List<Employee> emps, SortMethod method) {
+		class EmployeeComparator implements Comparator<Employee> {
+
+			@Override
+			public int compare(Employee e1, final Employee e2) {
+				if(method == SortMethod.BYNAME) {
+					if(ignoreCase) return e1.name.compareToIgnoreCase(e2.name);
+					else return e1.name.compareTo(e2.name);
+				} else {
+					if(e1.salary == e2.salary) return 0;
+					else if(e1.salary < e2.salary) return -1;
+					else return 1;
+				}
+			}
+		}
+		Collections.sort(emps, new EmployeeComparator());
+	}
+
+d. Name three benefits of including functional style programming in Java
+- Programs are more compact, easier to write, and easier to read/understand
+- Programs are thread-safe
+- Easier to demonstrate correctness of functional programs
+- Easier to test; less likely that a test of a subroutine will fail tomorrow if it passed today since
+there are no side effects
+
+e. Express the functions defined below using Church’s lambda notation:
+   i. f(x)=x+2*x*x
+   => λx.x + 2xx
+
+   ii. g(x,y)=y–x+xy
+   => λxy.y – x + x^y
+
+   iii. h(x,y,z)=z–(x+y)
+   => λxyz.z – (x + y)
+
+f. For each lambda expression below, name the parameters and the free variables.
+    i.      - Parameter: No parameter
+            - Free variable: s, t
+
+    ii.     - Parameter: u, v
+            - Free variable: a, b, x, d
+
+    iii.    - Parameter: s, t
+            - Free variable: ignoreCase
+
+g.
+
+h. System.out::println
+    i.      To Lambda: x -> System.out.println(x)
+    ii.     Explain:
+            Because:
+                - System is a final class from the java.lang package.
+                - out is a class variable of type PrintStream declared in the System class.
+                - println is a method of the PrintStream class.
+            so the method reference of this is object::instanceMethod
+
+j. Math::random
+    i.      Supplier<Double> f = () -> Math.random();
+    ii.     public static void main(String[] args) {
+                Supplier<Double> supplier = () -> Math.random();
+                System.out.println(supplier.get());
+            }
+
+
+    iii.    class MySupplier<Double> implements Supplier<java.lang.Double> {
+
+                /**
+                 * Gets a result.
+                 *
+                 * @return a result
+                 */
+                @Override
+                public java.lang.Double get() {
+                    return Math.random();
+                }
+            }
+
+            public class MyClass {
+
+                public static void main(String[] args) {
+                    MySupplier<Double> mySupplier = new MySupplier<>();
+                    System.out.println(mySupplier.get());
+                }
+            }
