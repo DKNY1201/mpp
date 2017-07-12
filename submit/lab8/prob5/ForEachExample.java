@@ -17,12 +17,6 @@ public class ForEachExample {
 		list.forEach(param -> System.out.println(param.toUpperCase()));
 
 		// b
-		System.out.println("\nQuestion b:");
-		System.out.println("----------------------------------------");
-		Consumer<String> print = System.out::println;
-		list.forEach(print.andThen(String::toUpperCase));
-
-		// bonus
 		System.out.println("\nBonus:");
 		System.out.println("----------------------------------------");
 		list.stream()
