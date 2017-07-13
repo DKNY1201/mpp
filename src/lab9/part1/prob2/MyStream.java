@@ -4,39 +4,45 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class MyStream<T> {
 	private List<T> elements;
 	public static <T> MyStream<T> of(List<T> aList) {
-		//implement
-		return null;
+		return new MyStream<T>(aList);
 	}
 	private MyStream(List<T> aList) {
-		//implement
+		elements = aList;
 	}
 	
 	public static <S> MyStream<S> concat(MyStream<S> s1, MyStream<S> s2) {
-		//implement
-		return null;
+		s1.asList().addAll(s2.asList());
+		return new MyStream<S>(s1.asList());
 	}
 	
 	public <R> MyStream<R> flatMap(Function<T, MyStream<R>> mapper) {
-		//implement
+//		List<R> list = asList().stream()
+//				.map(mapper)
+//				.collect(Collectors.toList());
+//		return new MyStream<R>(list);
 		return null;
 	}
 	
 	public List<T> asList() {
-		//implement
-		return null;
+		return elements;
 	}
 	
 	public <R> MyStream<R> map(Function<T,R> mapper) {
-		//implement
-		return null;
+		return new MyStream<R>(
+				asList().stream()
+					.map(mapper)
+					.collect(Collectors.toList())
+		);
 	}
 	
 	public MyStream<T> filter(Predicate<T> predicate) {
-		//implement
-		return null;
+		return new MyStream<T>(asList().stream()
+				.filter(predicate)
+				.collect(Collectors.toList()));
 	}
 }

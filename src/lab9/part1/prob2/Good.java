@@ -1,7 +1,6 @@
 package lab9.part1.prob2;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Good {
 	public static void main(final String[] args) {
@@ -11,11 +10,11 @@ public class Good {
 				+ " with 'N': "+ good.findStartsWithLetter(Folks.friends, "N")));
 		
 		System.out.println(String.format("Editors with names that start"
-				+ " with 'N'", good.findStartsWithLetter(Folks.editors, "N")));
-	}
+				+ " with 'N': "+ good.findStartsWithLetter(Folks.editors, "N")));
+    }
 	
 	public List<String> findStartsWithLetter(List<String> list, String letter) {
-		return 
+		return
 		     MyStream.of(list)   //convert list to stream
          	     .filter(name -> name.startsWith(letter)) //returns filtered stream
          	     .map(name -> name.toUpperCase())  //maps each string to upper case string

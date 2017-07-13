@@ -14,12 +14,12 @@ import java.util.Arrays;
 public class Folks {
   public static
   final List<String> friends = 
-    Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott");
+    Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott", "Nina");
 
     public static
 
   final List<String> editors = 
-    Arrays.asList("Brian", "Jackie", "John", "Mike");
+    Arrays.asList("Brian", "Jackie", "John", "Mike", "Nina");
 
 public static
 
