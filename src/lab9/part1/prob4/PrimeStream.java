@@ -32,18 +32,13 @@ public class PrimeStream {
             .filter(isPrimePre);
 
     public void printFirstNPrimes(int n) {
-        Stream<BigInteger> primesInside = primes;
-        List<BigInteger> list = primesInside.limit(n).collect(Collectors.toList());
-        System.out.println(list);
-//        primes = list.stream();
+        System.out.println(new PrimeStream().primes.limit(n).collect(Collectors.toList()));
     }
 
     public static void main(String[] args) {
-
-        PrimeStream ps = new PrimeStream(); //PrimeStream is enclosing class ps.printFirstNPrimes(10);
-//        System.out.println(ps.primes.limit(10).collect(Collectors.toList()));
+        PrimeStream ps = new PrimeStream();
         ps.printFirstNPrimes(10);
         System.out.println("====");
-//        ps.printFirstNPrimes(5);
+        ps.printFirstNPrimes(5);
     }
 }
