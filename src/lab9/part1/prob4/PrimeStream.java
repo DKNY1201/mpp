@@ -23,7 +23,6 @@ public class PrimeStream {
                 return false;
             }
         }
-
         return true;
     }
 
