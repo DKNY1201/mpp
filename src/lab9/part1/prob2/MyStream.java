@@ -30,7 +30,7 @@ public class MyStream<T> {
 
 		// The mapper need 1 input as type T and return a MyStream as type R
 		// So we need give T (each element in 'elements')
-		elements.forEach(
+		asList().forEach(
 				e -> newStreamList.add(mapper.apply(e))
 		);
 
