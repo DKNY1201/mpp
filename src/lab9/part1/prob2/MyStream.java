@@ -22,7 +22,7 @@ public class MyStream<T> {
 	}
 	
 	public <R> MyStream<R> flatMap(Function<T, MyStream<R>> mapper) {
-		// List of R for new MyStream<R>
+		// List of R for return new MyStream<R>
 		List<R> listR = new ArrayList<>();
 
 		// List of MyStream<R> for receive data from current 'elements'
