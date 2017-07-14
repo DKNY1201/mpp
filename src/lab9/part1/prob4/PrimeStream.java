@@ -30,9 +30,16 @@ public class PrimeStream {
             .iterate(BigInteger.ONE, n -> n.add(BigInteger.ONE))
             .filter(isPrimePre);
 
+//    public Stream<BigInteger> getStream() {
+//        return Stream
+//                .iterate(BigInteger.ONE, n -> n.add(BigInteger.ONE))
+//                .filter(isPrimePre);
+//    }
+
     public void printFirstNPrimes(int n) {
         System.out.println(new PrimeStream().primes.limit(n).collect(Collectors.toList()));
     }
+
 
     public static void main(String[] args) {
         PrimeStream ps = new PrimeStream();
