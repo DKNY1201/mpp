@@ -46,13 +46,20 @@ public class Employee {
 		Function<Employee, String> byName = employee -> employee.getName();
 		Function<Employee, Integer> bySalary = employee -> employee.getSalary();
 
-		Comparator<Integer> comparator = (x, y) -> x - y;
+		Comparator<Integer> comparator = (x, y) -> y - x;
 
+		// First way
 		List<Employee> sortedEmployeeByName = employees.stream()
 				.sorted(Comparator.comparing(byName).thenComparing(bySalary, comparator::compare))
 				.collect(Collectors.toList());
 
+		// Second way
+		List<Employee> sortedEmployeeByName1 = employees.stream()
+				.sorted(Comparator.comparing(byName).thenComparing(Comparator.comparing(bySalary).reversed()))
+				.collect(Collectors.toList());
+
 		System.out.println(sortedEmployeeByName);
+		System.out.println(sortedEmployeeByName1);
 	}
 }
 
