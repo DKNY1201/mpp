@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class MyStream<T> {
 	private List<T> elements;
@@ -21,11 +22,21 @@ public class MyStream<T> {
 	}
 	
 	public <R> MyStream<R> flatMap(Function<T, MyStream<R>> mapper) {
-//		List<R> list = asList().stream()
-//				.map(mapper)
-//				.collect(Collectors.toList());
-//		return new MyStream<R>(list);
-		return null;
+		// List of R for new MyStream<R>
+		List<R> listR = new ArrayList<>();
+
+		// List of MyStream<R> for receive data from current 'elements'
+		List<MyStream<R>> newStreamList = new ArrayList<>();
+
+		// The mapper need 1 input as type T and return a MyStream as type R
+		// So we need give T (each element in 'elements')
+		elements.forEach(
+				e -> newStreamList.add(mapper.apply(e))
+		);
+
+		// Put all 'elements' from list of MyStream<R> in to a List of R
+		newStreamList.forEach(streamR -> listR.addAll(streamR.asList()));
+		return new MyStream<R>(listR);
 	}
 	
 	public List<T> asList() {
