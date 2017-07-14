@@ -13,7 +13,7 @@ public class Main {
 		System.out.println(allWhoseZipContains3());
 		System.out.println(allHavingOverdueBook());
 		System.out.println(allHavingMultipleAuthors());
-
+		System.out.println(allHavingAtLeastTwoCopies());
 	}
 
 	// Returns a list of all ids of LibraryMembers whose zipcode contains the
@@ -61,6 +61,18 @@ public class Main {
 		return bs.stream()
 				.filter(b -> b.getAuthors().size() > 1)
 				.map(Book::getIsbn)
+				.collect(Collectors.toList());
+	}
+
+	//Returns a list of all isbns of books having at least two copies
+	public static List<String> allHavingAtLeastTwoCopies() {
+		DataAccess da = new DataAccessFacade();
+		Collection<Book> books = da.readBooksMap().values();
+		List<Book> bs = new ArrayList<>();
+		bs.addAll(books);
+		return bs.stream()
+				.filter(b -> b.getCopies().length >= 2)
+				.map(b -> b.getIsbn())
 				.collect(Collectors.toList());
 	}
 
