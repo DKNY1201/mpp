@@ -14,11 +14,12 @@ public class PrimeStream {
 
     boolean isPrime(BigInteger m) {
         int n = m.intValue();
+        System.out.println(m + "-" +n);
         if (n < 3) {
             return false;
         }
 
-        for (int i = 3; i < Math.sqrt(n); i += 2) {
+        for (int i = 2; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {
                 return false;
             }
@@ -29,12 +30,6 @@ public class PrimeStream {
     final Stream<BigInteger> primes = Stream
             .iterate(BigInteger.ONE, n -> n.add(BigInteger.ONE))
             .filter(isPrimePre);
-
-//    public Stream<BigInteger> getStream() {
-//        return Stream
-//                .iterate(BigInteger.ONE, n -> n.add(BigInteger.ONE))
-//                .filter(isPrimePre);
-//    }
 
     public void printFirstNPrimes(int n) {
         System.out.println(new PrimeStream().primes.limit(n).collect(Collectors.toList()));
