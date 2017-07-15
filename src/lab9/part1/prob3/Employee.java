@@ -58,8 +58,14 @@ public class Employee {
 				.sorted(Comparator.comparing(byName).thenComparing(Comparator.comparing(bySalary).reversed()))
 				.collect(Collectors.toList());
 
+		// Third way
+		List<Employee> sortedEmployeeByName2 = employees.stream()
+				.sorted(Comparator.comparing(byName).thenComparing(employee -> -employee.getSalary()))
+				.collect(Collectors.toList());
+
 		System.out.println(sortedEmployeeByName);
 		System.out.println(sortedEmployeeByName1);
+		System.out.println(sortedEmployeeByName2);
 	}
 }
 
