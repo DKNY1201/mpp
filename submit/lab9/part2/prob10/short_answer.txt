@@ -1,0 +1,2 @@
+a. What happens when the following code is executed?
+Answer: 1 will be printed out but program still run. Fix it by call terminal operation.
