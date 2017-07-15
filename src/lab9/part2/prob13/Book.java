@@ -24,9 +24,6 @@ public class Book {
 	}
 
 	public boolean isAvailable() {
-		return getCopies()
-				.stream()
-				.filter(bookCopy -> bookCopy.isAvailable())
-				.count() > 0;
+		return copies.stream().map(c -> c.isAvailable()).reduce(true,(a,b) -> a || b);
 	}
 }
