@@ -58,7 +58,7 @@ public class Main {
 		bs.addAll(books);
 		// implement
 		List<String> listHavingMultipleAuthors = bs.stream()
-													.filter(b -> b.getAuthors().size() > 2)
+													.filter(b -> b.getAuthors().size() > 1)
 													.map(b -> b.getIsbn())
 													.collect(Collectors.toList());
 		return listHavingMultipleAuthors;
