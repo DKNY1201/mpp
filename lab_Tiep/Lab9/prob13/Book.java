@@ -24,6 +24,6 @@ public class Book {
 		copies.add(copy);
 	}
 	public boolean isAvailable(){
-		return copies.stream().map(c -> c.isAvailable()).reduce(true,(a,b) -> a = b);
+		return copies.stream().map(c -> c.isAvailable()).reduce(true,(a,b) -> a||b);
 	}
 }
