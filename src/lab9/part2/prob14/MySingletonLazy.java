@@ -15,11 +15,13 @@ public class MySingletonLazy {
 
     public static MySingletonLazy getInstance() {
         Optional<MySingletonLazy> mySingletonLazyOptional = Optional.ofNullable(instance);
-        if (mySingletonLazyOptional.isPresent()) {
-            return mySingletonLazyOptional.get();
-        } else {
-            instance = new MySingletonLazy();
-            return instance;
-        }
+        instance = mySingletonLazyOptional.orElseGet(() -> new MySingletonLazy());
+        return instance;
+//        if (mySingletonLazyOptional.isPresent()) {
+//            return mySingletonLazyOptional.get();
+//        } else {
+//            instance = new MySingletonLazy();
+//            return instance;
+//        }
     }
 }
