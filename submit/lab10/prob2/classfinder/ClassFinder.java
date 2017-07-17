@@ -22,14 +22,12 @@ public class ClassFinder {
 
 	    public static List<Class<?>> find(String scannedPackage) {
 	        String scannedPath = scannedPackage.replace(DOT, SLASH);
-			URL scannedUrl = Thread.currentThread().getContextClassLoader().getResource(scannedPath);
+	        URL scannedUrl = Thread.currentThread().getContextClassLoader().getResource(scannedPath);
 	        if (scannedUrl == null) {
 	            throw new IllegalArgumentException(String.format(BAD_PACKAGE_ERROR, scannedPath, scannedPackage));
 	        }
-			System.out.println(scannedUrl);
-			File scannedDir = new File(scannedUrl.getFile());
-			System.out.println(scannedDir.getName());
-			List<Class<?>> classes = new ArrayList<Class<?>>();
+	        File scannedDir = new File(scannedUrl.getFile());
+	        List<Class<?>> classes = new ArrayList<Class<?>>();
 	        for (File file : scannedDir.listFiles()) {
 	            classes.addAll(find(file, scannedPackage));
 	        }

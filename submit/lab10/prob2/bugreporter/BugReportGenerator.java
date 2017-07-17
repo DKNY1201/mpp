@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 
 import lab10.prob2.classfinder.ClassFinder;
 import lab10.prob2.bugreporter.BugReport;
-//import logging.defaultlogging.LogSetup;
+import logging.defaultlogging.LogSetup;
 
 /**
  * This class scans the package lab10.prob2.javapackage
@@ -48,7 +48,8 @@ import lab10.prob2.bugreporter.BugReport;
  *
  */
 public class BugReportGenerator {
-	private static final Logger LOG = Logger.getLogger(BugReportGenerator.class.getName());
+	private static final Logger LOG;
+//	= Logger.getLogger(BugReportGenerator.class.getName());
 	private static final String PACKAGE_TO_SCAN = "lab10.prob2.javapackage";
 	private static final String REPORT_NAME = "bug_report.txt";
 	private static final String REPORTED_BY = "reportedBy: ";
@@ -56,10 +57,10 @@ public class BugReportGenerator {
 	private static final String DESCRIPTION = "description: ";
 	private static final String SEVERITY = "severity: ";
 	
-//	static {
-//		LogSetup.setup();
-//		LOG = Logger.getGlobal();
-//	}
+	static {
+		LogSetup.setup();
+		LOG = Logger.getGlobal();
+	}
 	public void reportGenerator() throws FileNotFoundException, IOException {
 		List<Class<?>> classes = ClassFinder.find(PACKAGE_TO_SCAN);
 		//sample code for reading annotations -- you will need to change
@@ -69,7 +70,7 @@ public class BugReportGenerator {
 		for(Class<?> cl : classes) {
 			if(cl.isAnnotationPresent(BugReport.class)) {
 				BugReport annotation = (BugReport)cl.getAnnotation(BugReport.class);
-
+				
 				String name = annotation.assignedTo();
 				int severity = annotation.severity();
 				String description = annotation.description();
@@ -92,7 +93,9 @@ public class BugReportGenerator {
 				
 			}
 		}
-
+//		System.out.println(names);
+		
+		
 		try (PrintWriter printWriter = new PrintWriter(new FileWriter(REPORT_NAME))) {
 			hash.keySet().forEach( key -> {
 				printWriter.println(key);

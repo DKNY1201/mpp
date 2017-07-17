@@ -43,5 +43,9 @@ public class Guest {
 	public void setPlanningToCome(boolean planningToCome) {
 		this.planningToCome = planningToCome;
 	}
-	
+
+	@Override
+	public String toString() {
+		return getName();
+	}
 }
