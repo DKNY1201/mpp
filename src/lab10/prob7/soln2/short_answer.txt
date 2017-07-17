@@ -1,0 +1,3 @@
+Q: Does this approach provide a good test for the asString method?
+A: This isn't a good approach for test the asString method because it only test each part of the stream pipeline.
+We need provide one test for the final result of asString method.
