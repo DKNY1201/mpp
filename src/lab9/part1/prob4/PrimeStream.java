@@ -14,7 +14,6 @@ public class PrimeStream {
 
     boolean isPrime(BigInteger m) {
         int n = m.intValue();
-        System.out.println(m + "-" +n);
         if (n < 3) {
             return false;
         }

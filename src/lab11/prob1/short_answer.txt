@@ -1,0 +1,25 @@
+A.
+List<Integer> ints = new ArrayList<Integer>();
+ints.add(1);
+ints.add(2);
+
+List<Number> nums = ints;
+nums.add(3.14);
+System.out.print(ints);
+
+Answer: This block of code will meet compiler error because List<Integer> is not extends from List<Number>
+
+
+
+B.
+
+List<Integer> ints = new ArrayList<Integer>();
+ints.add(1);
+ints.add(2);
+
+List<? extends Number> nums = ints;
+nums.add(3.14);
+System.out.print(ints);
+
+Answer: This block of code will meet compiler error because
+ the type List<? extends Number> is not applicable for the arguments (double)
